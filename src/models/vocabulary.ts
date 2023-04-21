@@ -1,15 +1,20 @@
 export interface IVocabulary {
   newWord: string;
   definition: string;
+  exampleSentences?: string[];
+  lang: ELanguages;
+  partOfSpeech?: string;
+  pronunciation?: string;
+  similarWords?: string[];
 }
 
 export type NewWordFormValues = IVocabulary;
 
 export enum ELanguages {
   English = 'eng',
-  Vietnamese = 'vie',
+  Korean = 'kor',
 }
 
-export type LanguageKey = ELanguages.English | ELanguages.Vietnamese;
+export type LanguageKey = ELanguages.English | ELanguages.Korean;
 
 export type Dictionary = Record<LanguageKey, IVocabulary[]>;
