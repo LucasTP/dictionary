@@ -1,7 +1,7 @@
 {
-  "name": "react-typescript-boilerplate",
+  "name": "my-dictionary",
   "version": "1.0.0",
-  "description": "The boilerplate for ReactJS application with Typescript",
+  "description": "My dictionary is a web application that helps me to learn new words.",
   "main": "./src/index.js",
   "scripts": {
     "start": "webpack serve --mode development --open --hot",
@@ -14,14 +14,14 @@
     "url": "git+https://github.com/LucasTP/react-typescript-boilerplate.git"
   },
   "keywords": [
-    "react-typescript-boilerplate"
+    "lucas-dictionary"
   ],
   "author": "nguyendinhhoa",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/LucasTP/react-typescript-boilerplate/issues"
+    "url": "https://github.com/LucasTP/dictionary/issues"
   },
-  "homepage": "https://github.com/LucasTP/react-typescript-boilerplate#readme",
+  "homepage": "https://github.com/LucasTP/dictionary#readme",
   "devDependencies": {
     "@babel/core": "^7.21.4",
     "@babel/preset-env": "^7.21.4",

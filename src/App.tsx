@@ -1,10 +1,11 @@
 import React from 'react';
 
-import { Button, ConfigProvider } from 'antd';
+import { ConfigProvider } from 'antd';
+import { AppLayout } from './components/AppLayout';
 
 const App = () => (
   <ConfigProvider>
-    <Button type="primary">Button</Button>
+    <AppLayout />
   </ConfigProvider>
 );
 
