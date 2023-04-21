@@ -37,13 +37,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: Download Build
-        uses: actions/download-artifact@v2
-        with:
-          name: build
-          path: build
       - name: Deploy to Firebase
-        uses: w9jds/firebase-action@master
+        uses: mohammed-atif/firebase-publish-react@v1.0
         with:
           args: deploy --only hosting
         env:
