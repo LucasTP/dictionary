@@ -7,7 +7,8 @@ import Form from 'antd/es/form';
 import Input from 'antd/es/input';
 import Button from 'antd/es/button';
 
-import { NewWordFormValues } from '../models/vocabulary';
+import { ELanguages, IVocabulary, NewWordFormValues } from '../models/vocabulary';
+import { useDictionary } from '../hooks/useDictionary';
 
 const headerStyle: React.CSSProperties = {
   margin: '1rem',
@@ -20,9 +21,20 @@ const newWordFormStyle: React.CSSProperties = {
 
 export function AppHeader(): ReactElement {
   const [form] = Form.useForm();
+  const { addNewWord } = useDictionary();
 
-  const onFinish = (values: NewWordFormValues): void => {
-    console.log('Success:', values);
+  const onFinish = async (values: NewWordFormValues) => {
+    const { newWord, definition } = values;
+    const payload: IVocabulary = {
+      newWord: newWord.toLowerCase(),
+      definition,
+      lang: ELanguages.English,
+      similarWords: [],
+      pronunciation: '',
+      exampleSentences: [],
+      partOfSpeech: '',
+    };
+    await addNewWord(payload);
   };
 
   return (

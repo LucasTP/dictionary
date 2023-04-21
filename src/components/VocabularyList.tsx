@@ -4,11 +4,12 @@ import type { ReactElement } from 'react';
 import Table from 'antd/es/table';
 
 import { useDictionary } from '../hooks/useDictionary';
-import { ELanguages } from '../models/vocabulary';
+import { IVocabulary } from '../models/vocabulary';
 
 export function VocabularyList(): ReactElement {
-  const { dictionary, fetchDictionary } = useDictionary(ELanguages.English);
+  const { fetchDictionary } = useDictionary();
 
+  const [dictionary, setDictionary] = React.useState<IVocabulary[]>([]);
   const columns = [
     {
       title: 'New Word',
@@ -23,10 +24,17 @@ export function VocabularyList(): ReactElement {
   ];
 
   React.useEffect(() => {
-    fetchDictionary();
+    fetchDictionary()
+      .then((data) => {
+        setDictionary(data.eng);
+      })
+      .catch((err) => {
+        // eslint-disable-next-line no-console
+        console.error(err);
+      });
   }, []);
 
-  return <Table dataSource={dictionary} columns={columns} />;
+  return <Table dataSource={dictionary} columns={columns} rowKey="newWord" />;
 }
 
 export default React.memo(VocabularyList);
