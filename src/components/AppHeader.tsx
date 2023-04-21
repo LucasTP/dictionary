@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React from 'react';
 
 import type { ReactElement } from 'react';
@@ -21,7 +22,6 @@ export function AppHeader(): ReactElement {
   const [form] = Form.useForm();
 
   const onFinish = (values: NewWordFormValues): void => {
-    // eslint-disable-next-line no-console
     console.log('Success:', values);
   };
 
