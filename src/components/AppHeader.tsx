@@ -21,6 +21,7 @@ export function AppHeader(): ReactElement {
   const [form] = Form.useForm();
 
   const onFinish = (values: NewWordFormValues): void => {
+    // eslint-disable-next-line no-console
     console.log('Success:', values);
   };
 

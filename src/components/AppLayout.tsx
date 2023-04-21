@@ -11,7 +11,6 @@ import { VocabularyList } from './VocabularyList';
 const rootStyle: React.CSSProperties = {
   width: '100%',
   height: '100%',
-  backgroundColor: 'transparent',
 };
 
 const headerStyle: React.CSSProperties = {
@@ -20,7 +19,12 @@ const headerStyle: React.CSSProperties = {
   lineHeight: 'inherit',
   height: 'inherit',
 };
+
 const contentStyle: React.CSSProperties = {
+  backgroundColor: 'transparent',
+};
+
+const layoutStyle: React.CSSProperties = {
   backgroundColor: 'transparent',
 };
 
@@ -28,7 +32,7 @@ export function AppLayout(): ReactElement {
   return (
     <>
       <Space direction="vertical" style={rootStyle}>
-        <Layout>
+        <Layout style={layoutStyle}>
           <Header style={headerStyle}>
             <AppHeader />
           </Header>
