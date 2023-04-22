@@ -30,7 +30,7 @@ export function VocabularyList(): ReactElement {
       })
       .catch((err) => {
         // eslint-disable-next-line no-console
-        console.error(err);
+        console.error('[ERROR][FETCH][DICTIONARY]: ', err);
       });
   }, []);
 
